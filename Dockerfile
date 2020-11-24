@@ -15,7 +15,8 @@ ENV PYTHONPATH="${PYTHONPATH}:/usr/lib/python3/dist-packages"
 
 RUN pip install -U pip setuptools wheel \
 	&& pip install pyOpenSSL \
-    	&& pip install apache-airflow[crypto,aws,slack,postgres]
+    	&& pip install apache-airflow \
+		 --use-feature=2020-resolver
 
 COPY ./entrypoint.sh /entrypoint.sh
 
